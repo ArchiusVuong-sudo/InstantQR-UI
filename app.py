@@ -21,9 +21,6 @@ os.system('playwright install-deps')
 # Load environment variables
 load_dotenv()
 
-# Initialize OpenAI client
-client = OpenAI()
-
 # Default instructions for agents
 DEFAULT_IMAGE_SPECIALIST_INSTRUCTIONS = """
 <role>
@@ -399,6 +396,9 @@ Please evaluate if the new image is visually correct and properly integrated int
                 with tempfile.NamedTemporaryFile(suffix='.png', delete=False) as temp_file:
                     img.save(temp_file.name, format='PNG')
                     temp_file_path = temp_file.name
+
+                # Initialize OpenAI client
+                client = OpenAI()
 
                 # Open the temporary file and pass it to the API
                 with open(temp_file_path, 'rb') as image_file:
