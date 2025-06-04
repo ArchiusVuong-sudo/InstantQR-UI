@@ -1,0 +1,8 @@
+streamlit
+playwright
+python-dotenv
+Pillow
+openai
+requests
+asyncio
+openai-agents
